@@ -82,7 +82,7 @@ class Course {
     for (let i = 9; i < 18; i++) {
       rowHTMLout += `<td>${i + 1}</td>`;
     }
-    let rowHTML = `<tr><td>Hole:</td>${rowHTMLin}<td>OUT</td>${rowHTMLout}<td>IN</td><td>Total</td></tr>`;
+    let rowHTML = `<tr class="tableHead"><td>Hole:</td>${rowHTMLin}<td>OUT</td>${rowHTMLout}<td>IN</td><td>Total</td></tr>`;
     card.innerHTML += rowHTML;
 
     //Teeboxes
@@ -97,7 +97,7 @@ class Course {
       for (let i = 9; i < 18; i++) {
         rowHTMLout += `<td>${this.holes[i].teeBoxes[index].yards}</td>`;
       }
-      rowHTML = `<tr><td>${tee.teeColorType}</td>${rowHTMLin}<td></td>${rowHTMLout}<td></td><td></td></tr>`;
+      rowHTML = `<tr><td style="color:${tee.teeHexColor}">${tee.teeColorType}</td>${rowHTMLin}<td></td>${rowHTMLout}<td></td><td></td></tr>`;
       card.innerHTML += rowHTML;
     });
 
@@ -121,6 +121,19 @@ class Course {
       rowHTML = `<tr><td>${player.name || "Player " + (index + 1)}</td>${rowHTMLin}<td>${outScore}</td>${rowHTMLout}<td>${inScore}</td><td>${inScore + outScore}</td></tr>`;
       card.innerHTML += rowHTML;
     });
+
+    //par
+    rowHTMLin = "";
+    rowHTMLout = "";
+
+    for (let i = 0; i < 9; i++) {
+      rowHTMLin += `<td>${this.holes[i].teeBoxes[0].par}</td>`;
+    }
+    for (let i = 9; i < 18; i++) {
+      rowHTMLout += `<td>${this.holes[i].teeBoxes[0].par}</td>`;
+    }
+    rowHTML = `<tr><td>Par</td>${rowHTMLin}<td></td>${rowHTMLout}<td></td><td></td></tr>`;
+    card.innerHTML += rowHTML;
   }
   nextHole() {
     this.activeHole++;

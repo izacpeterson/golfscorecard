@@ -30,6 +30,16 @@ td {
   padding: 5px;
   text-align: center;
 }
+tr:nth-child(even) {
+  background-color: #ccc;
+}
+td:nth-child(odd) {
+  //   background-color: blue;
+}
+.tableHead {
+  background-color: #6511d3;
+  color: white;
+}
 #players {
   display: flex;
   flex-direction: column;
