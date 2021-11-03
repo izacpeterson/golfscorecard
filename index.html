@@ -5,20 +5,64 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./app.js"></script>
     <title>Golf Scorecard</title>
   </head>
   <body>
-    <h1>Golf Scorecard</h1>
-    <label for="courseSelect">Course:</label>
-    <select id="courseSelect">
-      <option>Select Course</option>
-    </select>
-    <h2 id="courseName"></h2>
+    <header>
+      <h1>Golf Scorecard</h1>
+    </header>
+    <main>
+      <label for="courseSelect"
+        >Course:
+        <select id="courseSelect">
+          <option>Select Course</option>
+        </select>
+      </label>
+      <h2 id="courseName"></h2>
+      <div id="holeInfo">
+        <div id="holeInfoSIde">
+          <h2 id="holeNumber">Hole: 1</h2>
+          <h2 id="thisPar">Par:</h2>
+          <h2 id="handicap">Handicap</h2>
+        </div>
+        <div id="teeBoxInfo">
+          <h2>Tee Boxes</h2>
+          <ul id="teeBoxes"></ul>
+        </div>
+      </div>
+      <form action="" id="players">
+        <span>
+          <h2>Name</h2>
+          <h2>Score</h2>
+        </span>
+        <span>
+          <input type="text" placeholder="Player One Name" id="p1Name" oninput="myCourse.setPlayerName(0,document.querySelector('#p1Name').value)" />
+          <input type="number" id="p1Score" oninput="myCourse.setPlayerScore(0,document.querySelector('#p1Score').value)" />
+        </span>
+        <span>
+          <input type="text" placeholder="Player Two Name" id="p2Name" oninput="myCourse.setPlayerName(1,document.querySelector('#p2Name').value)" />
+          <input type="number" id="p2Score" oninput="myCourse.setPlayerScore(1,document.querySelector('#p2Score').value)" />
+        </span>
+        <span>
+          <input type="text" placeholder="Player Three Name" id="p3Name" oninput="myCourse.setPlayerName(2,document.querySelector('#p3Name').value)" />
+          <input type="number" id="p3Score" oninput="myCourse.setPlayerScore(2,document.querySelector('#p3Score').value)" />
+        </span>
+        <span>
+          <input type="text" placeholder="Player Four Name" id="p4Name" oninput="myCourse.setPlayerName(3,document.querySelector('#p4Name').value)" />
+          <input type="number" id="p4Score" oninput="myCourse.setPlayerScore(3,document.querySelector('#p4Score').value)" />
+        </span>
+      </form>
 
-    <table>
-      <tbody id="card"></tbody>
-    </table>
+      <div>
+        <button id="prevHole" onclick="if(myCourse.activeHole>1) myCourse.previousHole()">Previous Hole</button>
+        <button id="nextHole" onclick="if(myCourse.activeHole<18) myCourse.nextHole()">Next Hole</button>
+      </div>
+
+      <table>
+        <tbody id="card"></tbody>
+      </table>
+    </main>
   </body>
 </html>

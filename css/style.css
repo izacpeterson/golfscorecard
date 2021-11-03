@@ -1,0 +1,56 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Jost", sans-serif;
+}
+
+header {
+  background-color: #6511d3;
+  color: white;
+  padding: 0.5rem;
+  box-shadow: 0 0 10px grey;
+}
+header h1 {
+  font-weight: 300;
+}
+
+main {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+td {
+  border: black solid 1px;
+  padding: 5px;
+  text-align: center;
+}
+
+#players {
+  display: flex;
+  flex-direction: column;
+}
+#players span {
+  display: flex;
+  justify-content: space-between;
+}
+
+ul {
+  list-style: none;
+}
+
+#holeInfo {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+/*# sourceMappingURL=style.css.map */

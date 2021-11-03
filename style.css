@@ -11,3 +11,11 @@ td {
   padding: 5px;
   text-align: center;
 }
+#players {
+  display: flex;
+  flex-direction: column;
+}
+#players span {
+  display: flex;
+  justify-content: space-between;
+}
